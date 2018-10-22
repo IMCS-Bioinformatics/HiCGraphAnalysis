@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Network | Basic usage</title>
+
+        <link href="../Utils/vis-network.min.css" rel="stylesheet" type="text/css" />
+        <link href="../Utils/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css">
+            #mynetwork {
+                height: 1000px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid" id="testdiv">
+          <div class="row">
+              <div class="col-lg-12 card" id="testcard">
+              </div>    
+          </div>    
+        </div>
+<!--         <button id="hide" onclick="hideSection('graphSection')">Hide</button>
+        <button id="show" onclick="showSection('graphSection')">Show</button>
+        <button id="change" onclick="changeText('upload-chr', 'bla bla bla')">change</button>
+ -->
+        <script type="text/javascript" src="../Utils/d3.min.js"></script>
+        <script type="text/javascript" src="../Utils/vis-network.min.js"></script>
+        <script type="text/javascript" src="../Utils/underscore-min.js"></script>
+        <script type="text/javascript" src="../Utils/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="../Utils/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../Utils/st.js"></script>
+        <script type="text/javascript" src="../Utils/draw.js"></script>
+
+        <script type="text/javascript">
+          var chrs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "X"]
+          var tissues = ['Mon', 'Mac0', 'Mac1', 'Mac2', 'Neu', 'MK', 'EP', 'Ery', 'FoeT', 'nCD4', 'tCD4', 'aCD4', 'naCD4', 'nCD8', 'tCD8', 'nB', 'tB']
+          // var minCompSize = 2;
+          var chrsdata;
+          var alldata;
+          var settings;
+          var netData = {filtred: {}, data: {}, bits: {}};
+          var template = {
+              style: {
+                  color: ["RGBA(220,20,60, 1)", "RGBA(220,20,60, 0.2)", "RGBA(192, 192, 192,1)", "RGBA(192, 192, 192,0.2)", "white"],
+                  highlight: ["RGBA(128,0,0,1)", "RGBA(128,0,0,0.2)", "RGBA(128,128,128,1)", "RGBA(128,128,128,0.2)", "white"],
+              },
+          };
+
+          addBody();
+          hideSection("graphSection");
+          hideSection("upload-tissue");
+          readData();
+
+        </script>
+    </body>
+</html>
